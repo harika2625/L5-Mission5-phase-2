@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  color: #f37120;
+  background-image: linear-gradient(
+    135deg,
+    #f37120,
+    #f58a18 6%,
+    #ffdd03 58%,
+    #faa911 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+}
+
+.homeBtn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.priceComparisonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  color: white;
+}
+
+.priceComparisonContainer section {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  margin: 5px;
+}
+
+.priceComparisonContainer section .stationCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 100%;
+  background-image: linear-gradient(to right bottom, #1e196b, #3129ab);
+  gap: 10px;
+}
+
+.stationImage {
+  width: 50px;
+  height: 50px;
+}
+
+.topUpBtn {
+  border-radius: 15px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background-image: linear-gradient(to right, #f36f21, #ffdd02);
+}
+
+.address {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+.fuelPrice91 {
+  background-image: linear-gradient(#03924c, #006f2a);
+  border-radius: 20px;
+  padding: 0px 5px 0px 5px;
+  text-align: center;
+}
+
+.fuelPrice95 {
+  background-image: linear-gradient(#f58a22, #d93627);
+  border-radius: 20px;
+  padding: 0px 5px 0px 5px;
+  text-align: center;
+}
+
+.fuelPriceDiesel {
+  background-image: linear-gradient(to right, #f36f21, #ffdd02);
+  border-radius: 20px;
+  padding: 0px 5px 0px 5px;
+  text-align: center;
+}

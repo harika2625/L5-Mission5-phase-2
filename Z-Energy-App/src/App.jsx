@@ -3,6 +3,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import "./App.css";
+import PriceComparison from "./pages/PriceComparison/PriceComparison";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/register" element={<Signup />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/pricecomparison" element={<PriceComparison />} />
       </Routes>
     </div>
   );

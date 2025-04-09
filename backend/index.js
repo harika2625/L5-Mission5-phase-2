@@ -5,6 +5,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const UserModel = require("./models/user");
+const StationModel = require("./models/station");
+const { stat } = require("fs");
 
 mongoose.connect("mongodb://localhost:27017/Zusers");
 
@@ -15,4 +17,35 @@ app.post("/register", (req, res) => {
   UserModel.create(req.body)
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
+});
+app.get("/stations", async (req, res) => {
+  try {
+    search = req.query?.search_string;
+    if (!search) {
+      search = "";
+      const stations = await StationModel.find();
+      res.status(200).send({ response: stations });
+    } else {
+      const stations = await StationModel.find({
+        $or: [
+          { name: { $regex: search, $options: "i" } },
+          { address: { $regex: search, $options: "i" } },
+        ],
+      });
+
+      // If no stations are found, send a 404 response with a message
+      if (stations.length === 0) {
+        res.status(404).send({ error: "No stations found." });
+      }
+      // If stations are found, send them in the response
+      else {
+        res.status(200).send({ response: stations });
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    res
+      .status(500)
+      .send({ error: "An error occurred while fetching stations." });
+  }
 });
