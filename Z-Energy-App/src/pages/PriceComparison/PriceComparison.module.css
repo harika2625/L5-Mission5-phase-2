@@ -1,11 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&subset=latin,latin-ext");
+
+.pageContainer {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: 0;
   gap: 10px;
   margin-bottom: 20px;
+}
+
+.header button {
+  margin-left: 15px;
 }
 
 .header h2 {
@@ -20,30 +31,40 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: roboto;
+  display: hidden;
+  visibility: hidden;
 }
 
 .homeBtn {
   border: none;
   cursor: pointer;
   background-color: transparent;
+  display: none;
+  visibility: hidden;
 }
 
 .priceComparisonContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   gap: 10px;
-  color: white;
+  display: none;
+  visibility: hidden;
+}
+
+.right {
+  margin-right: 20px;
 }
 
 .priceComparisonContainer section {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 5px;
+  width: 45%;
+  gap: 60px;
 }
 
 .priceComparisonContainer section .stationCard {
@@ -54,8 +75,26 @@
   justify-content: center;
   height: 60vh;
   width: 100%;
-  background-image: linear-gradient(to right bottom, #1e196b, #3129ab);
-  gap: 10px;
+  background-image: linear-gradient(to right bottom, #f36f21, #ffdd02);
+  gap: 20px;
+}
+
+.priceComparisonContainer section .stationCard .stationImage {
+  width: 100px;
+  height: 100px;
+}
+
+.priceComparisonContainer section .stationCard h3 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+.priceComparisonContainer section .stationCard p {
+  font-size: 16px;
+  word-break: break-word;
+  color: white;
 }
 
 .stationImage {
@@ -70,6 +109,15 @@
   font-weight: 600;
   color: #fff;
   background-image: linear-gradient(to right, #f36f21, #ffdd02);
+  display: none;
+  visibility: hidden;
+}
+
+.searchTitle {
+  margin: 100px;
+  color: #1e196b;
+  font-size: 30px;
+  font-family: Roboto;
 }
 
 .address {
@@ -97,4 +145,301 @@
   border-radius: 20px;
   padding: 0px 5px 0px 5px;
   text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.addressInput {
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(240, 238, 238);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  height: 40px;
+  width: 30%;
+}
+
+.compareBtn {
+  width: 80%;
+  margin: 10px;
+  background-image: linear-gradient(to right, #f36f21, #ffdd02);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.compareBtn:hover {
+  background-image: linear-gradient(to right, #ffdd02, #f36f21);
+  cursor: pointer;
+}
+
+.searchForm {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchForm .compareBtn {
+  height: 60px;
+  margin-bottom: 40px;
+}
+
+.jumpNav {
+  height: 60px;
+}
+
+.jumpNav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 80px;
+  list-style: none;
+}
+
+.banner {
+  height: 200px;
+  width: 100%;
+}
+
+.heroContainer {
+  display: inline-block;
+  visibility: visible;
+  width: 100%;
+  height: 493px;
+  margin-top: 120px;
+  margin-bottom: 80px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+}
+
+.priceComparisonWebContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+.priceComparisonWebContainer section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  width: 45%;
+  gap: 60px;
+}
+
+.priceComparisonWebContainer section .stationCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 100%;
+  background-image: linear-gradient(to right, #f36f21, #ffdd02);
+  gap: 20px;
+}
+
+.priceComparisonWebContainer section .stationCard div {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.priceComparisonWebContainer section .stationCard div img {
+  width: 80px;
+  height: 40px;
+}
+
+.priceComparisonWebContainer section .stationCard .stationImage {
+  width: 100px;
+  height: 100px;
+}
+
+.priceComparisonWebContainer section .stationCard h3 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+.priceComparisonWebContainer section .stationCard p {
+  font-size: 16px;
+  word-break: break-word;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .pageContainer {
+    background-color: rgb(240, 238, 238);
+  }
+  .header {
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .header button {
+    margin-left: 15px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: roboto;
+    display: inline-block;
+    visibility: visible;
+  }
+
+  .homeBtn {
+    display: inline-block;
+    visibility: visible;
+  }
+
+  .jumpNav {
+    display: none;
+    visibility: hidden;
+  }
+
+  .banner {
+    display: none;
+    visibility: hidden;
+  }
+
+  .heroContainer {
+    display: none;
+    visibility: hidden;
+  }
+
+  .priceComparisonContainer {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    visibility: visible;
+  }
+
+  .right {
+    margin-right: 20px;
+  }
+
+  .priceComparisonContainer section {
+    margin: 5px;
+    width: 45%;
+    gap: 60px;
+  }
+
+  .priceComparisonContainer section .stationCard {
+    height: 60vh;
+    width: 100%;
+    gap: 20px;
+    background-image: linear-gradient(to right bottom, #1e196b, #3129ab);
+  }
+
+  .priceComparisonContainer section .stationCard .stationImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .priceComparisonContainer section .stationCard h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .priceComparisonContainer section .stationCard p {
+    font-size: 16px;
+  }
+
+  .priceComparisonWebContainer {
+    display: none;
+    visibility: hidden;
+  }
+
+  .stationImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .topUpBtn {
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    visibility: visible;
+  }
+
+  .searchTitle {
+    display: none;
+    visibility: hidden;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .fuelPrice91 {
+    background-image: linear-gradient(#03924c, #006f2a);
+    border-radius: 20px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+  }
+
+  .fuelPrice95 {
+    background-image: linear-gradient(#f58a22, #d93627);
+    border-radius: 20px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+  }
+
+  .fuelPriceDiesel {
+    background-image: linear-gradient(to right, #f36f21, #ffdd02);
+    border-radius: 20px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+  }
+
+  .inputContainer {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .addressInput {
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: none;
+  }
+
+  .compareBtn {
+    width: 80%;
+    margin: 10px;
+    background-image: linear-gradient(to right, #f36f21, #ffdd02);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+  }
+
+  .searchForm {
+    gap: 10px;
+  }
+
+  .searchForm .compareBtn {
+    height: 20px;
+  }
 }

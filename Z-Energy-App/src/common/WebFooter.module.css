@@ -1,0 +1,88 @@
+.footer {
+  height: 400px;
+  background-color: rgb(226, 225, 225);
+}
+
+.contactUs {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.contactUsBtn {
+  margin-top: 10px;
+  margin-right: 10px;
+  height: 34px;
+  width: 140px;
+  background-color: #f36f21;
+  border: none;
+  border-radius: 20px;
+  color: white;
+}
+
+.contactUsBtn span {
+  background-color: white;
+  border-radius: 20px;
+  color: #f36f21;
+  font-weight: 600;
+  width: 15px;
+}
+
+.footerContent {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  font-size: 18px;
+}
+
+.footerLogoContainer {
+  width: 20vw;
+  height: 40vh;
+  margin-left: 60px;
+}
+
+.footerLogo {
+  width: 160px;
+  height: 160px;
+}
+
+.footerTitle {
+  color: #1e196b;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footerContent ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerContent li {
+  list-style: none;
+  width: 100px;
+}
+
+.footerLinks {
+  width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    display: hidden;
+    visibility: hidden;
+    height: 0;
+  }
+
+  .contactUs {
+    display: none;
+    visibility: hidden;
+    height: 0;
+  }
+  .footerContent {
+    display: none;
+    visibility: hidden;
+    height: 0;
+  }
+}
