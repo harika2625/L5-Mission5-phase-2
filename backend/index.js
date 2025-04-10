@@ -35,7 +35,6 @@ app.post("/login", (req, res) => {
     })
 
     .catch((err) => res.json(err));
-
 });
 
 app.get("/stations", async (req, res) => {
@@ -68,3 +67,4 @@ app.get("/stations", async (req, res) => {
       .status(500)
       .send({ error: "An error occurred while fetching stations." });
   }
+});
