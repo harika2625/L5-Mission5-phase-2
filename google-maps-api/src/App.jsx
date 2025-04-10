@@ -3,19 +3,23 @@ import { LoadScript } from '@react-google-maps/api'
 import './App.css'
 import Map from './components/Map/Map'
 
-// Keep libraries array static outside component
-const GOOGLE_MAPS_LIBRARIES = ['places', 'marker'];
+// ! as usual, remember to delete clg lines after testing
+
+// libraries required for full maps functionality (one hopes)
+const GOOGLE_MAPS_LIBRARIES = ['places', 'marker', 'geometry'];
 
 function App() {
-  // const [selectedStation, setSelectedStation] = useState(null)
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
   const handleScriptLoad = useCallback(() => {
     console.log('Google Maps script loaded')
+    setIsScriptLoaded(true)
   }, [])
 
   const handleScriptError = useCallback((error) => {
     console.error('Error loading Google Maps:', error)
+    setIsScriptLoaded(false)
   }, [])
 
   if (!apiKey) {
@@ -34,8 +38,9 @@ function App() {
           libraries={GOOGLE_MAPS_LIBRARIES}
           onLoad={handleScriptLoad}
           onError={handleScriptError}
+          loadingElement={<div>Loading Google Maps...</div>}
         >
-          <Map />
+          {isScriptLoaded && <Map />}
         </LoadScript>
       </div>
     </div>

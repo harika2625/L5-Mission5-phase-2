@@ -10,7 +10,7 @@ function Search({ onPlaceSelected, center }) {
   const searchElementRef = useRef(null);
 
   // initializes the search box with google places autocomplete
-  // sets up event listeners and handles cleanup on unmount
+  // sets up event listeners and hopefully cleans up when unmounted
   useEffect(() => {
     async function initializeSearch() {
       try {
@@ -27,7 +27,7 @@ function Search({ onPlaceSelected, center }) {
         }
 
         console.log("Creating search element");
-        // create the gmp-place-autocomplete element for modern places api
+        // create the gmp-place-autocomplete element for places api
         const searchElement = document.createElement("gmp-place-autocomplete");
         searchElementRef.current = searchElement;
 
@@ -114,8 +114,9 @@ function Search({ onPlaceSelected, center }) {
 
     initializeSearch();
 
-    // cleanup function to remove search element
+    // ⚠️cleanup function to remove search element
     // prevents memory leaks and duplicate elements
+    /* ⚠️ unsure where to put this
     return () => {
       if (searchBoxRef.current) {
         searchBoxRef.current.innerHTML = "";
@@ -125,6 +126,7 @@ function Search({ onPlaceSelected, center }) {
       }
       console.log("Search element cleaned up");
     };
+    */
   }, [onPlaceSelected, center]);
 
   // render a material-ui paper component containing the search box
