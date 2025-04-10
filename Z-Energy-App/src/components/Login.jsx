@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import styles from "./Signup.module.css";
+import { useNavigate } from "react-router-dom";
+import styles from "./Login.module.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,7 +25,22 @@ function Login() {
   };
   return (
     <div className={styles.signUpContainer}>
-      <h2>Sign Up</h2>
+      <div className={styles.blueContainer}>
+        <div className={styles.statusBar}>
+          <h4>9:41</h4>
+          <div className={styles.statusIcons}>
+            <img
+              src="./public/high-connection.png"
+              alt="networkConnection"
+            ></img>
+            <img src="./public/wifi.png" alt="Wifi"></img>
+            <img src="./public/full-battery.png" alt="Battery"></img>
+          </div>
+        </div>
+        {/* <img src="../public/logo.png" alt="Z logo" /> */}
+      </div>
+      <div className={styles.yellowLine}></div>
+      <h2>Log In</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
           <label htmlFor="email">
@@ -33,33 +48,30 @@ function Login() {
           </label>
           <input
             type="email"
-            placeholder="Enter email"
+            placeholder="Enter your email"
             autoComplete="off"
             className="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <div className={styles.inputContainer}>
-            <label htmlFor="email">
-              <strong>Password</strong>
-            </label>
-            <input
-              type="password"
-              placeholder="Enter password"
-              className="username"
-              name="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
         </div>
-        <button type="submit" className="register">
-          Login
+        <div className={styles.inputContainer}>
+          <label htmlFor="email">
+            <strong>Password</strong>
+          </label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            className="username"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <button type="submit" className={styles.login}>
+          <strong>Login</strong>
         </button>
       </form>
-      <p>Already have an Account</p>
-      <Link to="/register" type="submit" className="login">
-        Sign Up
-      </Link>
     </div>
   );
 }
