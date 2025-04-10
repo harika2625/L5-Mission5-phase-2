@@ -1,8 +1,36 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, #root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  width: 100%;
+  height: calc(100% - 60px); /* Subtract header height */
+  position: relative;
+  flex: 1;
+}
+
+h1 {
+  margin: 0;
+  padding: 15px;
   text-align: center;
+  height: 60px;
+  background: white;
 }
 
 .logo {
@@ -39,23 +67,4 @@
 
 .read-the-docs {
   color: #888;
-}
-
-.app-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.main-content {
-  margin-top: 20px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
 }
