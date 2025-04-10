@@ -19,3 +19,14 @@ function App() {
 }
 
 export default App
+
+// !
+/*
+What pins return:
+{
+    position: { lat: number, lng: number },  // Exact coordinates
+    placeId: string,                         // Unique Google Place ID <-- ⚠️
+    title: string                            // Marker title if set
+}
+
+*/
