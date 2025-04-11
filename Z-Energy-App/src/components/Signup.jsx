@@ -30,21 +30,15 @@ function Signup() {
   return (
     <div className={styles.signUpContainer}>
       <div className={styles.blueContainer}>
-        <div className={styles.statusBar}>
-          <h4>9:41</h4>
-          <div className={styles.statusIcons}>
-            <img
-              src="./public/high-connection.png"
-              alt="networkConnection"
-            ></img>
-            <img src="./public/wifi.png" alt="Wifi"></img>
-            <img src="./public/full-battery.png" alt="Battery"></img>
-          </div>
+        <div className={styles.statusIcons}>
+          <p>9:41</p>
+          <img src="./public/high-connection.png" alt="networkConnection"></img>
+          <img src="./public/wifi.png" alt="Wifi"></img>
+          <img src="./public/full-battery.png" alt="Battery"></img>
         </div>
-        {/* <img src="../public/logo.png" alt="Z logo" /> */}
       </div>
-      <BlueYellowCurve />
-      {/* <div className={styles.yellowLine}></div> */}
+      {/* <BlueYellowCurve /> */}
+      <div className={styles.yellowLine}></div>
       <h3>Create an Account</h3>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>

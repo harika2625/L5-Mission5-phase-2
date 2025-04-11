@@ -6,13 +6,11 @@ function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.greetingContainer}>
-        <div className={styles.statusBar}>
-          <h3>9:41</h3>
-          <div className={styles.statusIcons}>
-            <img src="./public/Cellular Connection.png"></img>
-            <img src="./public/Property 1=icon, Property 2=wifi.png"></img>
-            <img src="./public/Battery.png"></img>
-          </div>
+        <div className={styles.statusIcons}>
+          <p>9:41</p>
+          <img src="./public/Cellular Connection.png"></img>
+          <img src="./public/Property 1=icon, Property 2=wifi.png"></img>
+          <img src="./public/Battery.png"></img>
         </div>
         <div className={styles.greeting}>
           <h2>Kia Ora Alex,</h2>
@@ -45,10 +43,6 @@ function Home() {
         </div>
       </div>
       <div className={styles.navBarContainer}>
-        {/* <img
-          src="./public/Navigation bar -  Footer.png"
-          alt="navigationBar"
-        ></img> */}
         <img src="./public/Property 1=icon, Property 2=HOME.png"></img>
         <img src="./public/Property 1=icon, Property 2=qr.png"></img>
         <img src="./public/Property 1=icon, Property 2=sharetank.png"></img>
