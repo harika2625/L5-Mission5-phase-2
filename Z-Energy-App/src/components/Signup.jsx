@@ -22,7 +22,7 @@ function Signup() {
       })
       .then((result) => {
         console.log(result);
-        navigate("/Login");
+        navigate("/Notification");
         alert("Registered Successfully");
       })
       .catch((error) => console.log(error));
@@ -85,9 +85,9 @@ function Signup() {
           Sign up
         </button>
       </form>
-      <p>Already have an Account</p>
+      <p>Already have an Account ?</p>
 
-      <Link to="/Login" type="submit" className={styles.login}>
+      <Link to="/Notification" type="submit" className={styles.login}>
         Login
       </Link>
     </div>

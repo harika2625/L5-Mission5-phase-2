@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(230, 230, 225);
+}
+
 .signUpContainer {
   display: flex;
   flex-direction: column;
@@ -6,9 +10,8 @@
   width: 320px;
   height: 568px;
   margin: 0 auto;
-  border: #1e196b 1px solid;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 3cqh;
 }
 
 .blueContainer {
@@ -19,8 +22,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  /* padding: 2rem 1rem; */
-  /* gap: 10px; */
   overflow: hidden;
 }
 .yellowLine {
@@ -33,10 +34,7 @@ h3 {
   color: #1e196b;
   margin-top: 10px;
 }
-/* .blueContainer img {
-  width: 76px;
-  height: 76px;
-} */
+
 .signUpContainer a {
   text-decoration: none;
 }
@@ -83,7 +81,7 @@ h3 {
   border: none;
   padding: 10px;
   box-shadow: 0px 0px 10px #fdeadf;
-  width: 130%;
+  width: 135%;
 }
 .signup {
   background: linear-gradient(

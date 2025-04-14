@@ -37,6 +37,10 @@ app.post("/login", (req, res) => {
     .catch((err) => res.json(err));
 });
 
+app.get("/home", (req, res) => {
+  res.status(200).json({ message: "Welcome to the Home Page!" });
+});
+
 app.get("/stations", async (req, res) => {
   try {
     search = req.query?.search_string;

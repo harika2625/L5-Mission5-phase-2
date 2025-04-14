@@ -28,9 +28,9 @@ function Login() {
       <div className={styles.blueContainer}>
         <div className={styles.statusIcons}>
           <p>9:41</p>
-          <img src="./public/high-connection.png" alt="networkConnection"></img>
-          <img src="./public/wifi.png" alt="Wifi"></img>
-          <img src="./public/full-battery.png" alt="Battery"></img>
+          <img src="/high-connection.png" alt="networkConnection"></img>
+          <img src="/wifi.png" alt="Wifi"></img>
+          <img src="/full-battery.png" alt="Battery"></img>
         </div>
 
         {/* <img src="../public/logo.png" alt="Z logo" /> */}
