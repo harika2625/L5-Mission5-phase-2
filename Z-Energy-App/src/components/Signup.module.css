@@ -24,6 +24,11 @@ body {
   position: relative;
   overflow: hidden;
 }
+.Zlogo img {
+  width: 100%;
+  height: 10vh;
+  object-fit: contain;
+}
 .yellowLine {
   width: 100%;
   height: 16px;

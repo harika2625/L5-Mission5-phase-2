@@ -32,8 +32,9 @@ function Login() {
           <img src="/wifi.png" alt="Wifi"></img>
           <img src="/full-battery.png" alt="Battery"></img>
         </div>
-
-        {/* <img src="../public/logo.png" alt="Z logo" /> */}
+        <div className={styles.Zlogo}>
+          <img src="/logo .png" alt="Z-Energy Logo" />
+        </div>
       </div>
       <div className={styles.yellowLine}></div>
       <h2>Log In</h2>

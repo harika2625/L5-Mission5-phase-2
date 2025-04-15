@@ -32,12 +32,16 @@ function Signup() {
       <div className={styles.blueContainer}>
         <div className={styles.statusIcons}>
           <p>9:41</p>
-          <img src="./public/high-connection.png" alt="networkConnection"></img>
-          <img src="./public/wifi.png" alt="Wifi"></img>
-          <img src="./public/full-battery.png" alt="Battery"></img>
+          <img src="/high-connection.png" alt="networkConnection"></img>
+          <img src="/wifi.png" alt="Wifi"></img>
+          <img src="/full-battery.png" alt="Battery"></img>
+        </div>
+        <div className={styles.Zlogo}>
+          <img src="/logo .png" alt="Z-Energy Logo" />
         </div>
       </div>
       {/* <BlueYellowCurve /> */}
+
       <div className={styles.yellowLine}></div>
       <h3>Create an Account</h3>
       <form onSubmit={handleSubmit}>
@@ -87,7 +91,7 @@ function Signup() {
       </form>
       <p>Already have an Account ?</p>
 
-      <Link to="/Notification" type="submit" className={styles.login}>
+      <Link to="/Login" type="submit" className={styles.login}>
         Login
       </Link>
     </div>

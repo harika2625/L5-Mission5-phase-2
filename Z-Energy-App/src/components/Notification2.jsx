@@ -2,21 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import styles from "./Notification.module.css";
+import styles from "./Notification2.module.css";
 
-function Notification() {
+function Notification2() {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/Notification2", {
+      .post("http://localhost:3000/Notification", {
         email,
         password,
       })
       .then((result) => {
         console.log(result);
         if (result.data === "sucessfully logged in") {
-          navigate("/Notification2");
+          navigate("/Login");
         }
       })
       .catch((error) => console.log(error));
@@ -34,11 +34,11 @@ function Notification() {
       <div className={styles.yellowLine}></div>
       <form onSubmit={handleSubmit}>
         <p className={styles.notificationText}>
-          Notifications may include alerts,sounds, add Icon badges.These can be
+          Allow this application to access your device's Location.These can be
           configured in Settings.
         </p>
         <div className={styles.notificationForm}></div>
-        <Link to="/Notification2" type="submit" className={styles.twoButtons}>
+        <Link to="/Login" type="submit" className={styles.twoButtons}>
           <button type="submit" className={styles.login}>
             <p className={styles.dontAllow}>Dont Allow</p>
           </button>
@@ -51,4 +51,4 @@ function Notification() {
     </div>
   );
 }
-export default Notification;
+export default Notification2;
