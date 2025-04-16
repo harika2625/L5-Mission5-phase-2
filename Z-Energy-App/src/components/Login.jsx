@@ -17,7 +17,7 @@ function Login() {
       })
       .then((result) => {
         console.log(result);
-        if (result.data === "sucessfully logged in") {
+        if (result.data === "successfully logged in") {
           navigate("/home");
         }
       })
