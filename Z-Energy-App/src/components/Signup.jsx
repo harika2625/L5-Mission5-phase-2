@@ -3,7 +3,7 @@ import styles from "./Signup.module.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../common/BlueYellowCurve.module.css"; // Import your CSS file for styling
+import Clock from "../common/Clock";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -12,6 +12,11 @@ function Signup() {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!name || !email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+    // Perform form validation here if needed
     axios
       .post("http://localhost:3000/register", {
         name,
@@ -24,12 +29,13 @@ function Signup() {
         alert("Registered Successfully");
       })
       .catch((error) => console.log(error));
+    alert("Registration failed. Please try again.");
   };
   return (
     <div className={styles.signUpContainer}>
       <div className={styles.blueContainer}>
         <div className={styles.statusIcons}>
-          <p>9:41</p>
+          <Clock />
           <img src="/high-connection.png" alt="networkConnection"></img>
           <img src="/wifi.png" alt="Wifi"></img>
           <img src="/full-battery.png" alt="Battery"></img>

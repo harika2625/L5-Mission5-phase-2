@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./Home.module.css";
+import Clock from "../common/Clock";
 
 function Home() {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.greetingContainer}>
         <div className={styles.statusIcons}>
-          <p>9:41</p>
+          <Clock />
           <img src="/Cellular Connection.png" alt="Network Connection"></img>
           <img src="/Property 1=icon, Property 2=wifi.png" alt="Wifi"></img>
           <img src="/Battery.png" alt="Battery"></img>

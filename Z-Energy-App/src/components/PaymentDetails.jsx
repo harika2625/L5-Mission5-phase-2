@@ -2,7 +2,7 @@ import styles from "./PaymentDetails.module.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../common/BlueYellowCurve.module.css"; // Import your CSS file for styling
+import Clock from "../common/Clock";
 
 function PaymentDetails() {
   const [cardNumber, setCardNumber] = useState("");
@@ -32,7 +32,7 @@ function PaymentDetails() {
   return (
     <div className={styles.signUpContainer}>
       <div className={styles.statusIcons}>
-        <p>9:41</p>
+        <Clock />
         <img src="/Cellular Connection.png" alt="Network Connection"></img>
         <img src="/Property 1=icon, Property 2=wifi.png" alt="Wifi"></img>
         <img src="/Battery.png" alt="Battery"></img>
@@ -113,9 +113,22 @@ function PaymentDetails() {
             onChange={(e) => setCardHolderName(e.target.value)}
           />
         </div>
-        <button variant="outlined " type="submit" className={styles.saveButton}>
-          Save
-        </button>
+        <div className={styles.saveButtonContainer}>
+          <button
+            variant="outlined "
+            type="submit"
+            className={styles.saveLaterButton}
+          >
+            Save Later
+          </button>
+          <button
+            variant="outlined "
+            type="submit"
+            className={styles.saveButton}
+          >
+            Save
+          </button>
+        </div>
       </form>
     </div>
   );

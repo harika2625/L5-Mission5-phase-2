@@ -3,13 +3,17 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
-
+import Clock from "../common/Clock";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
     axios
       .post("http://localhost:3000/login", {
         email,
@@ -27,7 +31,7 @@ function Login() {
     <div className={styles.signUpContainer}>
       <div className={styles.blueContainer}>
         <div className={styles.statusIcons}>
-          <p>9:41</p>
+          <Clock />
           <img src="/high-connection.png" alt="networkConnection"></img>
           <img src="/wifi.png" alt="Wifi"></img>
           <img src="/full-battery.png" alt="Battery"></img>
