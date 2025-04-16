@@ -74,7 +74,6 @@ function PaymentDetails() {
             id="expiryDate"
             placeholder="MM/YY"
             autoComplete="off"
-            className="expiryDate"
             name="expiryDate"
             onChange={(e) => setExpiryDate(e.target.value)}
           />
@@ -110,7 +109,6 @@ function PaymentDetails() {
             id="cardHolderName"
             placeholder="Enter cardholder's name"
             autoComplete="off"
-            className="cardHolderName"
             name="cardHolderName"
             onChange={(e) => setCardHolderName(e.target.value)}
           />

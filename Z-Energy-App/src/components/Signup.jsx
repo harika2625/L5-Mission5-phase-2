@@ -3,8 +3,6 @@ import styles from "./Signup.module.css";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import BlueYellowCurve from "../common/BlueYellowCurve"; // Import your
-import Button from "@mui/material/Button";
 import "../common/BlueYellowCurve.module.css"; // Import your CSS file for styling
 
 function Signup() {
@@ -53,7 +51,6 @@ function Signup() {
             type="text"
             placeholder="Enter your name"
             autoComplete="off"
-            className="username"
             name="email"
             onChange={(e) => setName(e.target.value)}
           />
@@ -66,7 +63,6 @@ function Signup() {
             type="email"
             placeholder="Enter your email"
             autoComplete="off"
-            className="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -79,7 +75,6 @@ function Signup() {
           <input
             type="password"
             placeholder="Enter password"
-            className="username"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
           />

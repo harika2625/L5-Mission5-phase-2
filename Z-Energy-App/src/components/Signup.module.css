@@ -107,35 +107,20 @@ h3 {
   border: none;
   margin-top: 10px;
 }
-/* p {
-  margin-top: 15px;
-}
-.login:hover {
-  color: red;
-  margin-top: 20px;
-}
-.loginContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-} */
 
 .login {
   color: #1e196b;
-
   padding: 5px 10px;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  margin-top: 12px; /* Remove hover margin change */
+  margin-top: 12px;
   display: flex;
   align-items: center;
 }
 
 .login:hover {
   color: #f76b1c;
-  /* Don't change margin here */
 }
 
 .loginContainer {
@@ -143,5 +128,5 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  margin-top: 15px; /* apply spacing here instead */
+  margin-top: 15px;
 }

@@ -8,7 +8,6 @@ app.use(cors());
 const UserModel = require("./models/user");
 const PaymentDetailsModel = require("./models/paymentDetails");
 const StationModel = require("./models/station");
-const { stat } = require("fs");
 
 mongoose.connect("mongodb://localhost:27017/Zusers");
 
