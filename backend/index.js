@@ -6,6 +6,7 @@ app.use(express.json());
 app.use(cors());
 const UserModel = require("./models/user");
 const StationModel = require("./models/station");
+const StationDataModel = require("./models/stationData");
 const { stat } = require("fs");
 
 mongoose.connect("mongodb://localhost:27017/Zusers");
@@ -66,5 +67,26 @@ app.get("/stations", async (req, res) => {
     res
       .status(500)
       .send({ error: "An error occurred while fetching stations." });
+  }
+});
+
+app.get("/stationdata/:name", async (req, res) => {
+  try {
+    if (
+      req.params.name === undefined ||
+      req.params.name === null ||
+      req.params.name === ""
+    ) {
+      return res.status(400).json({ message: "Station name is required" });
+    }
+    const stationName = req.params.name;
+    const stationData = await StationDataModel.findOne({ name: stationName });
+    if (!stationData) {
+      return res.status(404).json({ message: "Station data not found" });
+    }
+    res.status(200).json(stationData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
   }
 });

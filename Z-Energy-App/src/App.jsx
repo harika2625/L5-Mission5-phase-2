@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import "./App.css";
 import PriceComparison from "./pages/PriceComparison/PriceComparison";
+import TestMap from "./pages/Map/TempMap";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/pricecomparison" element={<PriceComparison />} />
+        <Route path="/map" element={<TestMap />} />
       </Routes>
     </div>
   );
