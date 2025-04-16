@@ -7,6 +7,8 @@ import Notification2 from "./components/Notification2";
 import PaymentDetails from "./components/PaymentDetails";
 import "./App.css";
 import PriceComparison from "./pages/PriceComparison/PriceComparison";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/pricecomparison" element={<PriceComparison />} />
       </Routes>
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
 }
