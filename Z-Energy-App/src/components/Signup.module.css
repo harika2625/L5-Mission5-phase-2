@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   margin-top: 3cqh;
+  font-family: "Roboto";
 }
 
 .blueContainer {
@@ -106,15 +107,41 @@ h3 {
   border: none;
   margin-top: 10px;
 }
-p {
+/* p {
   margin-top: 15px;
 }
+.login:hover {
+  color: red;
+  margin-top: 20px;
+}
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+} */
+
 .login {
-  background: linear-gradient(to left, #f76b1c, #ffcc00);
-  border-radius: 15px;
-  width: 30%;
-  padding: 5px;
-  text-align: center;
   color: #1e196b;
-  margin-top: 10px;
+
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 12px; /* Remove hover margin change */
+  display: flex;
+  align-items: center;
+}
+
+.login:hover {
+  color: #f76b1c;
+  /* Don't change margin here */
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px; /* apply spacing here instead */
 }

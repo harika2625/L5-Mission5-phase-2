@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const UserModel = require("./models/user");
+const PaymentDetailsModel = require("./models/paymentDetails");
 const StationModel = require("./models/station");
 const { stat } = require("fs");
 
@@ -18,7 +19,11 @@ app.post("/register", (req, res) => {
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
-
+app.post("/PaymentDetails", (req, res) => {
+  PaymentDetailsModel.create(req.body)
+    .then((paymentDetails) => res.json(paymentDetails))
+    .catch((err) => res.json(err));
+});
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   UserModel.findOne({ email, password })

@@ -14,14 +14,15 @@ function Home() {
         </div>
         <div className={styles.greeting}>
           <h2>Kia Ora Alex,</h2>
-          <div>
-            <h4>Sharetank</h4>
-            <p>
-              Maximize Your Fuel,
-              <br />
-              Amplify Your Sharing
-            </p>
+          <div className={styles.greetingText}>
+            <img src="/Property 1=icon, Property 2=ev1.png" alt="Wifi"></img>
+            <p>Sharetank</p>
           </div>
+          <p>
+            Maximize Your Fuel,
+            <br />
+            Amplify Your Sharing
+          </p>
           <button>View my tank</button>
         </div>
       </div>

@@ -89,11 +89,13 @@ function Signup() {
           Sign up
         </button>
       </form>
-      <p>Already have an Account ?</p>
+      <div className={styles.loginContainer}>
+        <p>Already have an Account ?</p>
 
-      <Link to="/Login" type="submit" className={styles.login}>
-        Login
-      </Link>
+        <Link to="/Login" type="submit" className={styles.login}>
+          Login
+        </Link>
+      </div>
     </div>
   );
 }

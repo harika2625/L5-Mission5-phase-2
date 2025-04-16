@@ -9,14 +9,14 @@ function Notification2() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/Notification", {
+      .post("http://localhost:3000/PaymentDetails", {
         email,
         password,
       })
       .then((result) => {
         console.log(result);
         if (result.data === "sucessfully logged in") {
-          navigate("/Login");
+          navigate("/PaymentDetails");
         }
       })
       .catch((error) => console.log(error));
@@ -38,7 +38,7 @@ function Notification2() {
           configured in Settings.
         </p>
         <div className={styles.notificationForm}></div>
-        <Link to="/Login" type="submit" className={styles.twoButtons}>
+        <Link to="/PaymentDetails" type="submit" className={styles.twoButtons}>
           <button type="submit" className={styles.login}>
             <p className={styles.dontAllow}>Dont Allow</p>
           </button>
