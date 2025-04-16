@@ -17,6 +17,7 @@
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.1",
     "@react-google-maps/api": "^2.20.6",
+    "@vis.gl/react-google-maps": "^1.5.2",
     "dotenv": "^16.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
