@@ -15,6 +15,7 @@ import coffeeImage from "../../../assets/Ellipse 35.png";
 
 export default function StationCard({
   showStationCard,
+  handleGooglePingClick,
   name,
   address,
   time_table,
@@ -29,7 +30,12 @@ export default function StationCard({
             <h2 className={styles.header}>{name}</h2>
             <p className={styles.address}>{address}</p>
           </div>
-          <img className={styles.googlePing} src={googlePing} alt="station" />
+          <img
+            className={styles.googlePing}
+            src={googlePing}
+            alt="station"
+            onClick={() => handleGooglePingClick(name)}
+          />
         </div>
         <div className={styles.timeTable}>
           <ul className={styles.timeTableDay}>
@@ -56,11 +62,11 @@ export default function StationCard({
           <div>
             {services.map((service, index) =>
               service === "Bathroom" ? (
-                <Bathroom />
+                <Bathroom color="#34C759" />
               ) : service === "LPG SWAP'n'GO" ? (
                 <Lpg />
               ) : service === "Z Express" ? (
-                <Coffee />
+                <Coffee color="#34C759" />
               ) : service === "Trailer Hire" ? (
                 <Trailer />
               ) : service === "ATM" ? (
@@ -68,7 +74,7 @@ export default function StationCard({
               ) : service === "EV Charging" ? (
                 <Ev />
               ) : service === "Z20 Carwash" ? (
-                <CarWash />
+                <CarWash color="#34C759" />
               ) : null
             )}
           </div>

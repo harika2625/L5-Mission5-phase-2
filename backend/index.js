@@ -90,3 +90,183 @@ app.get("/stationdata/:name", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
+app.post("/nearestcarwash", async (req, res) => {
+  try {
+    const lat = req.body.lat;
+    const lng = req.body.lng;
+
+    let nearest;
+    let totalDistance = 100000000000;
+
+    const stations = await StationDataModel.find();
+    stations.forEach((station) => {
+      if (station.services.includes("Z20 Carwash") === false) {
+        return;
+      }
+      const distance = () => {
+        latDistance = Math.abs(lat - station.location.lat);
+        lngDistance = Math.abs(lng - station.location.lng);
+        return latDistance + lngDistance;
+      };
+
+      const thisDistance = distance();
+      if (thisDistance < totalDistance) {
+        totalDistance = thisDistance;
+        nearest = station;
+      }
+    });
+
+    console.log(nearest);
+    res
+      .status(200)
+      .json({ lat: nearest.location.lat, lng: nearest.location.lng });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+app.post("/nearestcarwash", async (req, res) => {
+  try {
+    const lat = req.body.lat;
+    const lng = req.body.lng;
+
+    let nearest;
+    let totalDistance = 100000000000;
+
+    const stations = await StationDataModel.find();
+    stations.forEach((station) => {
+      if (station.services.includes("Z20 Carwash") === false) {
+        return;
+      }
+      const distance = () => {
+        latDistance = Math.abs(lat - station.location.lat);
+        lngDistance = Math.abs(lng - station.location.lng);
+        return latDistance + lngDistance;
+      };
+
+      const thisDistance = distance();
+      if (thisDistance < totalDistance) {
+        totalDistance = thisDistance;
+        nearest = station;
+      }
+    });
+
+    console.log(nearest);
+    res
+      .status(200)
+      .json({ lat: nearest.location.lat, lng: nearest.location.lng });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+app.post("/nearestev", async (req, res) => {
+  try {
+    const lat = req.body.lat;
+    const lng = req.body.lng;
+
+    let nearest;
+    let totalDistance = 100000000000;
+
+    const stations = await StationDataModel.find();
+    stations.forEach((station) => {
+      if (station.services.includes("EV Charging") === false) {
+        return;
+      }
+      const distance = () => {
+        latDistance = Math.abs(lat - station.location.lat);
+        lngDistance = Math.abs(lng - station.location.lng);
+        return latDistance + lngDistance;
+      };
+
+      const thisDistance = distance();
+      if (thisDistance < totalDistance) {
+        totalDistance = thisDistance;
+        nearest = station;
+      }
+    });
+
+    console.log(nearest);
+    res
+      .status(200)
+      .json({ lat: nearest.location.lat, lng: nearest.location.lng });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+app.post("/nearestbathroom", async (req, res) => {
+  try {
+    const lat = req.body.lat;
+    const lng = req.body.lng;
+
+    let nearest;
+    let totalDistance = 100000000000;
+
+    const stations = await StationDataModel.find();
+    stations.forEach((station) => {
+      if (station.services.includes("Bathroom") === false) {
+        return;
+      }
+      const distance = () => {
+        latDistance = Math.abs(lat - station.location.lat);
+        lngDistance = Math.abs(lng - station.location.lng);
+        return latDistance + lngDistance;
+      };
+
+      const thisDistance = distance();
+      if (thisDistance < totalDistance) {
+        totalDistance = thisDistance;
+        nearest = station;
+      }
+    });
+
+    console.log(nearest);
+    res
+      .status(200)
+      .json({ lat: nearest.location.lat, lng: nearest.location.lng });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+app.post("/nearestcoffee", async (req, res) => {
+  try {
+    const lat = req.body.lat;
+    const lng = req.body.lng;
+
+    let nearest;
+    let totalDistance = 100000000000;
+
+    const stations = await StationDataModel.find();
+    stations.forEach((station) => {
+      if (station.services.includes("Z Express") === false) {
+        return;
+      }
+      const distance = () => {
+        latDistance = Math.abs(lat - station.location.lat);
+        lngDistance = Math.abs(lng - station.location.lng);
+        return latDistance + lngDistance;
+      };
+
+      const thisDistance = distance();
+      if (thisDistance < totalDistance) {
+        totalDistance = thisDistance;
+        nearest = station;
+      }
+    });
+
+    console.log(nearest);
+    res
+      .status(200)
+      .json({ lat: nearest.location.lat, lng: nearest.location.lng });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});

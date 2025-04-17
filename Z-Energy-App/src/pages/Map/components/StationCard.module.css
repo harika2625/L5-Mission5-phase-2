@@ -33,6 +33,10 @@
   width: 80%;
 }
 
+.googlePing:hover {
+  cursor: pointer;
+}
+
 .headerDiv {
   width: 100%;
 }

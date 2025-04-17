@@ -21,6 +21,10 @@ const StationDataSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  location: {
+    type: Object,
+    required: true,
+  },
 });
 const StationDataModel = mongoose.model("StationData", StationDataSchema);
 module.exports = StationDataModel;
