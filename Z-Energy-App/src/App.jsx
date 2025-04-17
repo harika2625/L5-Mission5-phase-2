@@ -22,7 +22,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/pricecomparison" element={<PriceComparison />} />
       </Routes>
-      <ToastContainer position="top-center" autoClose={3000} />
+      <ToastContainer position="top-center" autoClose={1500} />
     </div>
   );
 }
