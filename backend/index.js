@@ -1,12 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 app.use(cors());
 const UserModel = require("./models/user");
+const PaymentDetailsModel = require("./models/paymentDetails");
 const StationModel = require("./models/station");
-const { stat } = require("fs");
 
 mongoose.connect("mongodb://localhost:27017/Zusers");
 
@@ -18,23 +19,36 @@ app.post("/register", (req, res) => {
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
-
+app.post("/PaymentDetails", (req, res) => {
+  PaymentDetailsModel.create(req.body)
+    .then((paymentDetails) => res.json(paymentDetails))
+    .catch((err) => res.json(err));
+});
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
-  UserModel.findOne({ email, password })
+
+  UserModel.findOne({ email })
     .then((user) => {
-      if (user) {
-        if (user.password === password) {
-          res.status(200).json("sucessfully logged in");
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      // Compare entered password with hashed password
+      bcrypt.compare(password, user.password).then((isMatch) => {
+        if (isMatch) {
+          res.status(200).json("successfully logged in");
         } else {
           res.status(401).json({ message: "Invalid credentials" });
         }
-      } else {
-        res.status(404).json({ message: "User not found" });
-      }
+      });
     })
+    .catch((err) =>
+      res.status(500).json({ message: "Server error", error: err })
+    );
+});
 
-    .catch((err) => res.json(err));
+app.get("/home", (req, res) => {
+  res.status(200).json({ message: "Welcome to the Home Page!" });
 });
 
 app.get("/stations", async (req, res) => {
